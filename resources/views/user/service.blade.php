@@ -86,7 +86,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/skills-img.jpg" class="img-fluid" alt="">
+            <img src="{{asset('user/assets/img/skills-img.jpg')}}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
