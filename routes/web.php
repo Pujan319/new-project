@@ -34,6 +34,9 @@ Route::get('/blog','App\Http\Controllers\UserController@blog')->name('blog');
 Route::get('/contact','App\Http\Controllers\UserController@contact')->name('contact');
 // admin routes
 Route::get('/admin/home','App\Http\controllers\Admincontroller@index')->name('admin.home');
+Route::get('/admin/addcategory','App\Http\controllers\Admincontroller@addcategory')->name('admin.addcategory');
+Route::get('/admin/addproduct','App\Http\controllers\Admincontroller@addproduct')->name('admin.addproduct');
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

@@ -6,14 +6,32 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth:web');
+    }
+
+
+
+
     public function index()
     {
         return view('admin.adminhome');
+    }
+
+    public function addcategory(){
+        return view('admin.addcategory');
+    }
+
+    public function addproduct(){
+        return view('admin.addproduct');
     }
 
     /**
