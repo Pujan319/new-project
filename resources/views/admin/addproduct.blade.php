@@ -22,47 +22,46 @@
               </header>
               <div class="panel-body">
                 <div class="form">
-                  <form class="form-validate form-horizontal " id="register_form" method="get" action="">
+                  <form class="form-validate form-horizontal " id="register_form" method="post" action="">
                     <div class="form-group ">
-                      <label for="fullname" class="control-label col-lg-2">Full name <span class="required">*</span></label>
+                      <label for="productname" class="control-label col-lg-2">Product name <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class=" form-control" id="fullname" name="fullname" type="text" />
+                        <input class=" form-control" id="pname" name="pname" type="text" />
                       </div>
                     </div>
                     <div class="form-group ">
-                      <label for="address" class="control-label col-lg-2">Address <span class="required">*</span></label>
+                      <label for="price" class="control-label col-lg-2">Product price <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class=" form-control" id="address" name="address" type="text" />
+                        <input class=" form-control" id="price" name="price" type="number" />
                       </div>
                     </div>
                     <div class="form-group ">
-                      <label for="username" class="control-label col-lg-2">Username <span class="required">*</span></label>
+                      <label for="quantity" class="control-label col-lg-2">Product quantity <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="username" name="username" type="text" />
+                        <input class="form-control " id="quantity" name="quantity" type="number" />
                       </div>
                     </div>
                     <div class="form-group ">
-                      <label for="password" class="control-label col-lg-2">Password <span class="required">*</span></label>
+                      <label for="discription" class="control-label col-lg-2">Product description <span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="password" name="password" type="password" />
+                        <textarea class="form-control" name="description"></textarea>
                       </div>
                     </div>
                     <div class="form-group ">
-                      <label for="confirm_password" class="control-label col-lg-2">Confirm Password <span class="required">*</span></label>
+                      <label for="image" class="control-label col-lg-2">Product image<span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="confirm_password" name="confirm_password" type="password" />
+                        <input class="form-control " id="image" name="image" type="file" />
                       </div>
                     </div>
                     <div class="form-group ">
-                      <label for="email" class="control-label col-lg-2">Email <span class="required">*</span></label>
+                      <label for="category" class="control-label col-lg-2">Category<span class="required">*</span></label>
                       <div class="col-lg-10">
-                        <input class="form-control " id="email" name="email" type="email" />
-                      </div>
-                    </div>
-                    <div class="form-group ">
-                      <label for="agree" class="control-label col-lg-2 col-sm-3">Agree to Our Policy <span class="required">*</span></label>
-                      <div class="col-lg-10 col-sm-9">
-                        <input type="checkbox" style="width: 20px" class="checkbox form-control" id="agree" name="agree" />
+                        <select class="form-control" name="category">
+                        	@foreach($category as $c)
+                        		<option value="{{$c->id}}">{{$c->category_name}}</option>
+
+                        	@endforeach
+                        </select>
                       </div>
                     </div>
                     <div class="form-group">

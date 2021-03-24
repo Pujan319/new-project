@@ -22,7 +22,13 @@
               </header>
               <div class="panel-body">
                 <div class="form">
-                  <form class="form-validate form-horizontal " id="register_form" method="post" action="">
+                	@if(Session::has('msg'))
+                	<div class="alert alert-success">
+                		{{Session::get('msg')}}
+                	</div>
+                	@endif
+                  <form class="form-validate form-horizontal " id="register_form" method="post" action="{{route('admin.storecategory')}}">
+                  	@csrf
                     <div class="form-group ">
                       <label for="cname" class="control-label col-lg-2">Category Name <span class="required">*</span></label>
                       <div class="col-lg-10">
