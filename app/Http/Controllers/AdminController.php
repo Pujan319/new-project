@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Category;
 
+use App\Models\Product;
+
 class AdminController extends Controller
 {
 
@@ -45,6 +47,26 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public  function storeproduct(Request $request){
+
+    $image=null;
+     if($request->hasFile('image')){
+        $file=$request->file('image');
+        $image=mt_rand(10001,9999999).'_'.$file->getClientOriginalName();
+        $file->move('admin/upload/products/',$image);
+     }  
+     Product::create([
+        'product_name' =>$request->get('pname'),
+        'product_price'=>$request->get('price'),
+        'product_quantity'=>$request->get('quantity'),
+        'product_description'=>$request->get('description'),
+        'product_image'=>$image,
+        'category_id'=>$request->get('category')
+     ]);
+     $request->session()->flash('msg','Product has been added seccessfully');
+     return redirect()->back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -72,9 +94,10 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showproduct()
     {
-        //
+        $showproduct=Product::orderBy('id','desc')->get();
+        return view('admin.showproduct',['showproduct'=>$showproduct]);
     }
 
     /**

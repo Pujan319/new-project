@@ -22,11 +22,13 @@
               </header>
               <div class="panel-body">
                 <div class="form">
+                  
                 	@if(Session::has('msg'))
                 	<div class="alert alert-success">
                 		{{Session::get('msg')}}
                 	</div>
                 	@endif
+
                   <form class="form-validate form-horizontal " id="register_form" method="post" action="{{route('admin.storecategory')}}">
                   	@csrf
                     <div class="form-group ">
