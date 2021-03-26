@@ -1,5 +1,5 @@
 @extends('user.layout.master')
-@section('title','Ecommerce-Homepage')
+@section('title','Service')
 @section('content-section')
 
  <main id="main">

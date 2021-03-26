@@ -68,7 +68,7 @@
           <li><a class="{{Request::is('/homepage','homepage')?'active':''}}" href="{{route('homepage')}}">Home</a></li>
           <li><a class="{{request::is('/about','about')?'active':''}}" href="{{('about')}}">About</a></li>
           <li><a class="{{request::is('/service','service')?'active':''}}" href="{{('service')}}">Services</a></li>
-          <li><a class="{{request::is('/portfolio','portfolio')?'active':''}}" href="{{('portfolio')}}">Portfolio</a></li>
+          <li><a class="{{request::is('/product','product')?'active':''}}" href="{{('product')}}">Product</a></li>
           <li><a class="{{request::is('/team','team')?'active':''}}" href="{{('team')}}">Team</a></li>
           <li><a class="{{request::is('/pricing','pricing')?'active':''}}" href="{{('pricing')}}">Pricing</a></li>
           <li><a class="{{request::is('/blog','blog')?'active':''}}" href="{{('blog')}}">Blog</a></li>

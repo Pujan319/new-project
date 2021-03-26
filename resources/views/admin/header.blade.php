@@ -331,7 +331,7 @@
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
-                          <span>Items</span>
+                          <span>Manage Products</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
@@ -369,11 +369,12 @@
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_table"></i>
-                          <span>Tables</span>
+                          <span>Products</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="basic_table.html">Basic Table</a></li>
+              <li><a class="" href="{{route('admin.showcategory')}}">Show Category</a></li>
+              <li><a class="" href="{{route('admin.showproduct')}}">Show Product</a></li>
             </ul>
           </li>
 
