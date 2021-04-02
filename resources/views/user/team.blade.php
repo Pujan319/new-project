@@ -9,7 +9,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{route('homepage')}}">Home</a></li>
           <li>Team</li>
         </ol>
         <h2>Team</h2>
@@ -24,8 +24,8 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
-              <img src="{{asset('user/assets/img/team/team-1.jpg')}}" alt="">
-              <h4>Walter White</h4>
+              <img src="{{asset('user/assets/img/team/pp.jpg')}}" alt="">
+              <h4>Pujan Thapa</h4>
               <span>Chief Executive Officer</span>
               <p>
                 Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut

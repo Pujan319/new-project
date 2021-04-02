@@ -41,8 +41,8 @@
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">pujanthapa319@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+9779840054277</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -58,7 +58,7 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1><a href="index.html">Eterna</a></h1>
+        <h1><a href="index.html">Online Gadgets</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -66,12 +66,12 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="{{Request::is('/homepage','homepage')?'active':''}}" href="{{route('homepage')}}">Home</a></li>
-          <li><a class="{{request::is('/about','about')?'active':''}}" href="{{('about')}}">About</a></li>
-          <li><a class="{{request::is('/service','service')?'active':''}}" href="{{('service')}}">Services</a></li>
-          <li><a class="{{request::is('/product','product')?'active':''}}" href="{{('product')}}">Product</a></li>
-          <li><a class="{{request::is('/team','team')?'active':''}}" href="{{('team')}}">Team</a></li>
-          <li><a class="{{request::is('/pricing','pricing')?'active':''}}" href="{{('pricing')}}">Pricing</a></li>
-          <li><a class="{{request::is('/blog','blog')?'active':''}}" href="{{('blog')}}">Blog</a></li>
+          <li><a class="{{request::is('/about','about')?'active':''}}" href="{{route('about')}}">About</a></li>
+          <li><a class="{{request::is('/service','service')?'active':''}}" href="{{route('service')}}">Services</a></li>
+          <li><a class="{{request::is('/product','product')?'active':''}}" href="{{route('product')}}">Product</a></li>
+          <li><a class="{{request::is('/team','team')?'active':''}}" href="{{route('team')}}">Team</a></li>
+          <li><a class="{{request::is('/pricing','pricing')?'active':''}}" href="{{route('pricing')}}">Pricing</a></li>
+          <li><a class="{{request::is('/blog','blog')?'active':''}}" href="{{route('blog')}}">Blog</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -89,7 +89,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>
-          <li><a class="{{request::is('/contact','contact')?'active':''}}" href="{{('contact')}}">Contact</a></li>
+          <li><a class="{{request::is('/contact','contact')?'active':''}}" href="{{route('contact')}}">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -148,17 +148,17 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contact Us</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Budhanilkantha<br>
+              Kathmandu,44600<br>
+              Nepal <br><br>
+              <strong>Phone:</strong>+9779840054277<br>
+              <strong>Email:</strong>pujanthapa319@gmail.com<br>
             </p>
 
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Eterna</h3>
+            <h3>About Online Gadgets</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -175,7 +175,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Online Gadgets</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->

@@ -41,7 +41,14 @@
                     <td>{{$product->product_quantity}}</td>
                     <td>{{$product->product_description}}</td>
                     <td><img src="{{asset('admin/upload/products')}}/{{$product->product_image}}" width="100"></td>
-                    <td></td>
+                    <td>
+                      <div class="btn-group">
+                        <a class="btn btn-primary" href="{{route('admin.editproduct',$product->id)}}"><i class="icon_plus_alt2"></i></a>
+
+                        <a class="btn btn-danger" href="" onclick="return confirm('Are you sure?')"><i class="icon_close_alt2"></i></a>
+                        
+                      </div>
+                    </td>
                   </tr>
                  @endforeach
                 </tbody>

@@ -9,7 +9,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{route('homepage')}}">Home</a></li>
           <li>Pricing</li>
         </ol>
         <h2>Pricing</h2>

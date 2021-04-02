@@ -331,7 +331,7 @@
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_document_alt"></i>
-                          <span>Manage Products</span>
+                          <span>Manage Product</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">

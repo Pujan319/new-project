@@ -9,7 +9,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="{{route('homepage')}}">Home</a></li>
           <li>Contact</li>
         </ol>
         <h2>Contact</h2>
@@ -26,7 +26,7 @@
             <div class="info-box mb-4">
               <i class="bx bx-map"></i>
               <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p>Budhanilkantha, Kathmandu, 44600</p>
             </div>
           </div>
 
@@ -34,7 +34,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-envelope"></i>
               <h3>Email Us</h3>
-              <p>contact@example.com</p>
+              <p>pujanthapa319@gmail.com</p>
             </div>
           </div>
 
@@ -42,7 +42,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>+1 5589 55488 55</p>
+              <p>+9779840054277</p>
             </div>
           </div>
 

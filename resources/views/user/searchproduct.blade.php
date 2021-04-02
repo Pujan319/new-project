@@ -1,5 +1,5 @@
 @extends('user.layout.master')
-@section('title','product')
+@section('title','searchproduct')
 @section('content-section')
 
 <style type="text/css">
@@ -10,7 +10,13 @@
 </style>
 <main id="main">
 
-  <section class="sidebar mt-5">
+    
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+       <section class="sidebar mt-5">
     <div class="container">
       <div class="col-md-8 row">
              <div class="search-form">
@@ -26,22 +32,17 @@
     
   </section>
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-
-      
         </div>
 
         <div class="row portfolio-container">
-          @foreach($show as $s)
+          @foreach($result as $s)
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="{{asset('admin/upload/products')}}/{{$s->product_image}}" class="img-fluid img" alt="">
               <div class="portfolio-info">
                 <a href="{{route('productdetail',$s->id)}}"><h4>{{$s->product_name}}</h4></a>
-                <p>Web</p>
+                
                 <div class="portfolio-links">
                   <a href="{{asset('admin/upload/products')}}/{{$s->product_image}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{$s->product_name}}"><i class="bx bx-plus"></i></a>
                   <a href="{{route('productdetail',$s->id)}}" title="More Details"><i class="bx bx-link"></i></a>

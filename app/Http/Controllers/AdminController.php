@@ -107,15 +107,33 @@ class AdminController extends Controller
         return view('admin.showcategory',['showcategory'=>$showcategory]);
     }
 
+    public function editcategory($id){
+        $edit=Category::find($id);
+        return view('admin.editcategory',compact('edit'));
+    }
+
+    public function updatecategory(Request $request,$id){
+        $updatecategory=Category::find($id);
+        $updatecategory->update([
+            'category_name'=>$request->get('cname')
+
+        ]);
+        $request->session()->flash('msg','Category updated');
+        return redirect()->back();
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editproduct($id)
     {
-        //
+        $category=Category::orderBy('id','asc')->get();
+        $edit=Product::find($id);
+
+        return view('admin.editproduct',compact('category','edit'));
     }
 
     /**
@@ -125,9 +143,15 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateproduct(Request $request, $id)
     {
-        //
+        $updateproduct=Product::find($id);
+        $updateproduct->update([
+            'product_name'=>$request->get('pname')
+
+        ]);
+        $request->session()->flash('msg','Product updated');
+        return redirect()->back();
     }
 
     /**
@@ -136,8 +160,11 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function deletecategory(Request $request,$id)
     {
-        //
+        $deletecategory=Category::find($id);
+        $deletecategory->delete();
+        $request->session()->flash('msg','Category deleted');
+        return redirect()->back();
     }
 }
