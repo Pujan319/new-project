@@ -55,6 +55,7 @@ Route::get('/admin/deletecategory{id}','App\Http\controllers\Admincontroller@del
 
 Route::get('/admin/editproduct{id}','App\Http\controllers\Admincontroller@editproduct')->name('admin.editproduct');
 Route::post('/admin/updateproduct{id}','App\Http\controllers\Admincontroller@updateproduct')->name('admin.updateproduct');
+Route::get('/admin/deleteproduct{id}','App\Http\controllers\Admincontroller@deleteproduct')->name('admin.deleteproduct');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

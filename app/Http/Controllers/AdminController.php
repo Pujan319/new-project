@@ -145,15 +145,31 @@ class AdminController extends Controller
      */
     public function updateproduct(Request $request, $id)
     {
-        $updateproduct=Product::find($id);
-        $updateproduct->update([
-            'product_name'=>$request->get('pname')
+         $product=product::find($id);
+        if ($request->hasFile('image')) {
+            $file=$request->file('image');
+            $image=mt_rand(10001,9999999).'_'.$file->
+            getClientOriginalName();
+            $file->move('admin/upload/products/',$image);
 
+            if ($product->product_image) {
+            //to remove image for folder
+            unlink('admin/upload/products/'.$product->product_image);
+        }
+        $product->product_image=$image;
+        }
+
+        $product->update([
+            'product_name'=>$request->get('pname'),
+            'product_price'=>$request->get('price'),
+            'product_quantity'=>$request->get('quantity'),
+            'product_description'=>$request->get('description'),
+            
+            'category_id'=>$request->get('category')
         ]);
-        $request->session()->flash('msg','Product updated');
-        return redirect()->back();
+        $request->session()->flash('msg','Product Has Been Update Successfully');
+        return redirect()->route('admin.showproduct');
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -167,4 +183,12 @@ class AdminController extends Controller
         $request->session()->flash('msg','Category deleted');
         return redirect()->back();
     }
+    public function deleteproduct(Request $request, $id)
+    {
+        $product=product::find($id);
+
+        $product->delete();
+        $request->session()->flash('msg','product has been delete successfully');
+        return redirect()->back();
+}
 }

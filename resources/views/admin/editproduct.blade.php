@@ -29,7 +29,7 @@
                   </div>
                   @endif
 
-                  <form class="form-validate form-horizontal " id="register_form" method="post" action="" enctype="multipart/form-data">
+                  <form class="form-validate form-horizontal " id="register_form" method="post" action="{{route('admin.updateproduct',$edit->id)}}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group ">
                       <label for="productname" class="control-label col-lg-2">Product name <span class="required">*</span></label>
@@ -65,6 +65,7 @@
                       <label for="category" class="control-label col-lg-2">Category<span class="required">*</span></label>
                       <div class="col-lg-10">
                         <select class="form-control" name="category">
+                          <option value="{{$edit->category_id}}">{{$edit->category->category_name}}</option>
                         	@foreach($category as $c)
                         		<option value="{{$c->id}}">{{$c->category_name}}</option>
 
