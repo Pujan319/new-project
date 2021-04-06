@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Models\Product;
 
+use App\Models\Category;
+
+use App\Models\Customer;
+
 class UserController extends Controller
 {
     /**
@@ -52,7 +56,9 @@ class UserController extends Controller
 
         $recent=Product::orderBy('id','desc')->limit(5)->get();
 
-        return view('user.productdetail',compact('detail','recent'));
+        $category=Category::withCount('products')->get();
+
+        return view('user.productdetail',compact('detail','recent','category'));
     }
     public function search(Request $request){
         $searchitem=$request->get('search');
@@ -60,6 +66,26 @@ class UserController extends Controller
         return view('user.searchproduct',['result'=>$result]);
     }
 
+
+    public function productbycategory($id){
+        $category=category::find($id);
+        return view('user.productbycategory',['category'=>$category]);
+    }
+
+
+    public function signupform(){
+        return view('user.signup');
+    }
+
+    public function storecustomer(Request $request){
+        Customer::create([
+            'name'=>$request->get('name'),
+            'email'=>$request->get('email'),
+            'password'=>bcrypt($request->get('pass'))
+        ]);
+        $request->session()->flash('msg','Account has been created successfully');
+        return redirect()->back();
+    }
 
     /**
      * Show the form for creating a new resource.
